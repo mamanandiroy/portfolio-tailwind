@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link href="src/output.css" rel="stylesheet" />
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      /* Cursor blinking effect for typing animation */
+      .typing-cursor::after {
+        content: "|";
+        display: inline-block;
+        margin-left: 3px;
+        animation: blink 0.8s infinite;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-gray-200 transition duration-300">
+    <!-- Navbar -->
+    <header class="fixed w-full top-0 left-0 z-50 bg-white dark:bg-gray-800 shadow transition">
+      <div class="container mx-auto flex items-center justify-between py-4 px-6">
+        <h1 class="text-2xl font-bold text-teal-600 dark:text-teal-400">Andi Roy</h1>
+        <nav>
+          <button id="menu-btn" class="lg:hidden text-teal-600 dark:text-teal-400 focus:outline-none">☰</button>
+          <ul id="menu" class="hidden lg:flex gap-6 font-medium">
+            <li><a href="#home" class="hover:text-teal-600 dark:hover:text-teal-400">Home</a></li>
+            <li><a href="#about" class="hover:text-teal-600 dark:hover:text-teal-400">About</a></li>
+            <li><a href="#projects" class="hover:text-teal-600 dark:hover:text-teal-400">Projects</a></li>
+            <li><a href="#contact" class="hover:text-teal-600 dark:hover:text-teal-400">Contact</a></li>
+          </ul>
+        </nav>
+        <!-- Dark Mode Toggle -->
+        <button id="dark-toggle" class="ml-4 text-xl text-teal-600 dark:text-teal-400">🌙</button>
+      </div>
+      <!-- Mobile Menu -->
+      <ul id="mobile-menu" class="hidden flex-col bg-white dark:bg-gray-800 shadow px-6 py-4 space-y-2 lg:hidden">
+        <li><a href="#home" class="hover:text-teal-600 dark:hover:text-teal-400">Home</a></li>
+        <li><a href="#about" class="hover:text-teal-600 dark:hover:text-teal-400">About</a></li>
+        <li><a href="#projects" class="hover:text-teal-600 dark:hover:text-teal-400">Projects</a></li>
+        <li><a href="#contact" class="hover:text-teal-600 dark:hover:text-teal-400">Contact</a></li>
+      </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-36 pb-20">
+      <div class="container mx-auto flex flex-wrap items-center">
+        <div class="w-full px-4 lg:w-1/2" data-aos="fade-right">
+          <h1 class="text-4xl font-bold text-slate-900 dark:text-white md:text-5xl lg:text-6xl">
+            Halo Semua 👏 <br />
+            Saya <span id="typing-text" class="text-teal-600 dark:text-teal-400 typing-cursor"></span>
+          </h1>
+          <h2 class="font-medium text-teal-500 text-lg mt-4 mb-6">Web Developer | Programmer</h2>
+          <p class="text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">Saya adalah seorang Programmer Web yang fokus pada desain modern dan performa aplikasi web.</p>
+          <a href="#contact" class="text-base font-semibold text-white bg-teal-600 py-3 px-8 rounded-full shadow-lg hover:bg-teal-700 transition duration-300">Hubungi Saya</a>
+        </div>
+        <div class="w-full px-4 lg:w-1/2 mt-10 lg:mt-0" data-aos="fade-left">
+          <!-- Profile Card -->
+          <div class="relative max-w-sm mx-auto p-6 rounded-2xl shadow-lg bg-gray-100 dark:bg-gray-800">
+            <img src="dist/img/Profile.png" alt="Profile" class="w-40 h-40 mx-auto rounded-full shadow-md border-4 border-white dark:border-gray-700" />
+            <h3 class="mt-4 text-xl font-semibold text-gray-800 dark:text-white text-center">Andi Roy</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300 text-center">Fullstack Web Developer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white dark:bg-gray-800 transition" data-aos="fade-up">
+      <div class="container mx-auto text-center px-4">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">Tentang Saya</h2>
+        <p class="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">Saya seorang web developer dengan keahlian dalam HTML, CSS, JavaScript, dan framework modern. Saya suka membuat website yang responsif, cepat, dan menarik.</p>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100 dark:bg-gray-900 transition">
+      <div class="container mx-auto text-center" data-aos="zoom-in">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-10">Proyek Saya</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+            <img src="dist/img/Project1.png" alt="Project 1" class="rounded-md mb-4" />
+            <h3 class="text-xl font-semibold text-slate-800 dark:text-white mb-2">Website Portfolio</h3>
+            <p class="text-slate-600 dark:text-slate-300">Website pribadi dengan desain modern menggunakan TailwindCSS.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+            <img src="dist/img/Project3.png" alt="Project 2" class="rounded-md mb-4" />
+            <h3 class="text-xl font-semibold text-slate-800 dark:text-white mb-2">Aplikasi Cuaca</h3>
+            <p class="text-slate-600 dark:text-slate-300">Aplikasi cuaca realtime dengan API OpenWeather.</p>
+          </div>
+          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
+            <img src="dist/img/Project2.png" alt="Project 3" class="rounded-md mb-4" />
+            <h3 class="text-xl font-semibold text-slate-800 dark:text-white mb-2">E-Commerce</h3>
+            <p class="text-slate-600 dark:text-slate-300">Website toko online dengan fitur keranjang dan checkout.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white dark:bg-gray-800 transition" data-aos="fade-up">
+      <div class="container mx-auto text-center px-4">
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-6">Hubungi Saya</h2>
+        <form action="#" class="max-w-xl mx-auto space-y-4">
+          <input type="text" placeholder="Nama" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 dark:bg-gray-700 dark:border-gray-600" />
+          <input type="email" placeholder="Email" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 dark:bg-gray-700 dark:border-gray-600" />
+          <textarea placeholder="Pesan" rows="5" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 dark:bg-gray-700 dark:border-gray-600"></textarea>
+          <button type="submit" class="w-full bg-teal-600 text-white py-3 rounded-lg hover:bg-teal-700 transition">Kirim</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-teal-600 text-white text-center py-6" data-aos="fade-up">
+      <p>&copy; 2025 Andi Roy. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
+
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const darkToggle = document.getElementById("dark-toggle");
+      const html = document.documentElement;
+
+      // Toggle mobile menu
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Toggle dark mode with localStorage
+      darkToggle.addEventListener("click", () => {
+        if (html.classList.contains("dark")) {
+          html.classList.remove("dark");
+          localStorage.setItem("theme", "light");
+          darkToggle.textContent = "🌙";
+        } else {
+          html.classList.add("dark");
+          localStorage.setItem("theme", "dark");
+          darkToggle.textContent = "☀️";
+        }
+      });
+
+      // Load saved theme
+      if (localStorage.getItem("theme") === "dark") {
+        html.classList.add("dark");
+        darkToggle.textContent = "☀️";
+      } else {
+        darkToggle.textContent = "🌙";
+      }
+
+      // Typing effect
+      const typingText = document.getElementById("typing-text");
+      const words = ["Andi Roy", "Seorang Developer", "Programmer Web"];
+      let wordIndex = 0;
+      let charIndex = 0;
+      let currentWord = "";
+      let isDeleting = false;
+
+      function type() {
+        currentWord = words[wordIndex];
+        if (isDeleting) {
+          typingText.textContent = currentWord.substring(0, charIndex--);
+          if (charIndex < 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+          }
+        } else {
+          typingText.textContent = currentWord.substring(0, charIndex++);
+          if (charIndex > currentWord.length) {
+            isDeleting = true;
+            setTimeout(type, 1000); // Pause before deleting
+            return;
+          }
+        }
+        setTimeout(type, isDeleting ? 80 : 150);
+      }
+      type();
+    </script>
+  </body>
+</html>
